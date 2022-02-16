@@ -1,12 +1,38 @@
 import Head from "next/head";
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useTransition, animated, config } from "react-spring";
 import styles from "../styles/Home.module.css";
+
+const useMediaQuery = (width) => {
+  const [targetReached, setTargetReached] = useState(false);
+
+  const updateTarget = useCallback((e) => {
+    if (e.matches) {
+      setTargetReached(true);
+    } else {
+      setTargetReached(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia(`(max-width: 950px)`);
+    media.addListener(updateTarget);
+
+    // Check on mount (callback is not called until a change occurs)
+    if (media.matches) {
+      setTargetReached(true);
+    }
+
+    return () => media.removeListener(updateTarget);
+  }, []);
+
+  return targetReached;
+};
 
 function Home() {
   const [index, set] = useState(0);
   const [matches, setMatches] = useState(false);
-
+  const isBreakpoint = useMediaQuery(768);
   useEffect(() => {
     void setInterval(() => set((state) => (state + 1) % 2), 5000);
     const mql = window.matchMedia("screen and (max-width: 950px)");
@@ -45,7 +71,7 @@ function Home() {
       <div className={styles.wrapper}>
         <div>
           {" "}
-          {matches ? (
+          {isBreakpoint ? (
             <div
               className={styles.photo}
               style={{
