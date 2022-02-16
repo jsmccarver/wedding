@@ -6,14 +6,14 @@ import styles from "../styles/Home.module.css";
 function Home() {
   const [index, set] = useState(0);
   const [matches, setMatches] = useState(false);
+  const mql = window.matchMedia("(max-width: 950px)");
+  mql.onchange = (e) => {
+    console.log("hello");
+    setMatches(e.matches);
+    console.log(e.matches);
+  };
+
   useEffect(() => {
-    window
-      .matchMedia("screen and (max-width: 950px)")
-      .addEventListener("change", (e) => {
-        console.log("hello");
-        setMatches(e.matches);
-        console.log(e.matches);
-      });
     void setInterval(() => set((state) => (state + 1) % 2), 5000);
   }, []);
   const slides = [
