@@ -49,7 +49,7 @@ function Home() {
                 <h3>Jared &</h3>
                 <h3>Allyson</h3>
                 <p>
-                  We can't wait to share our special day with you. Help us
+                  We can&apos;t wait to share our special day with you. Help us
                   capture our wedding with Joy.
                 </p>
               </div>
