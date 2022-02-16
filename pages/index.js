@@ -6,15 +6,15 @@ import styles from "../styles/Home.module.css";
 function Home() {
   const [index, set] = useState(0);
   const [matches, setMatches] = useState(false);
-  const mql = window.matchMedia("(max-width: 950px)");
-  mql.onchange = (e) => {
-    console.log("hello");
-    setMatches(e.matches);
-    console.log(e.matches);
-  };
 
   useEffect(() => {
     void setInterval(() => set((state) => (state + 1) % 2), 5000);
+    const mql = window.matchMedia("(max-width: 950px)");
+    mql.onchange = (e) => {
+      console.log("hello");
+      setMatches(e.matches);
+      console.log(e.matches);
+    };
   }, []);
   const slides = [
     {
