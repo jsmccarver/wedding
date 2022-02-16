@@ -31,7 +31,7 @@
   position: absolute;
   background-size: cover;
   background-color: transparent;
-  overflow: hidden !important;
+  overflow: hidden;
   will-change: opacity;
 }
 .photo h3 {
@@ -109,4 +109,47 @@
   background-repeat: no-repeat;
   height: 24vh;
   background-size: cover;
+}
+
+@media screen and (max-width: 950px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+  .photo {
+    height: 90vh;
+    width: 100vw;
+    position: relative;
+    overflow: visible;
+  }
+  .information {
+    position: relative;
+    overflow: visible;
+    background-color: #faf8f5;
+  }
+  .names {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    max-width: 250px;
+    bottom: 3rem;
+    left: 5px;
+    text-align: left;
+  }
+  .names h3 {
+    padding-bottom: 0.5rem;
+  }
+  .names h3,
+  .names p {
+    padding: 0px;
+    margin: 0px;
+  }
+  .names p {
+    font-family: "Roboto Serif", sans-serif;
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 400;
+  }
 }

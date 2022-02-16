@@ -5,7 +5,13 @@ import styles from "../styles/Home.module.css";
 
 function Home() {
   const [index, set] = useState(0);
+  const [matches, setMatches] = useState(false);
   useEffect(() => {
+    window.matchMedia("(max-width: 950px)").addEventListener("change", (e) => {
+      console.log("hello");
+      setMatches(e.matches);
+      console.log(e.matches);
+    });
     void setInterval(() => set((state) => (state + 1) % 2), 5000);
   }, []);
   const slides = [
@@ -36,13 +42,12 @@ function Home() {
 
       <div className={styles.wrapper}>
         <div>
-          {transitions.map(({ item, props, key }) => (
-            <animated.div
-              key={key}
+          {" "}
+          {matches ? (
+            <div
               className={styles.photo}
               style={{
-                ...props,
-                backgroundImage: `url(${item.url})`,
+                backgroundImage: "url('./tree.jpg')",
               }}
             >
               <div className={styles.names}>
@@ -50,11 +55,33 @@ function Home() {
                 <h3>Allyson</h3>
                 <p>
                   We can&apos;t wait to share our special day with you. Help us
-                  capture our wedding with Joy.
+                  capture our wedding.
                 </p>
               </div>
-            </animated.div>
-          ))}
+            </div>
+          ) : (
+            <>
+              {transitions.map(({ item, props, key }) => (
+                <animated.div
+                  key={key}
+                  className={styles.photo}
+                  style={{
+                    ...props,
+                    backgroundImage: `url(${item.url})`,
+                  }}
+                >
+                  <div className={styles.names}>
+                    <h3>Jared &</h3>
+                    <h3>Allyson</h3>
+                    <p>
+                      We can&apos;t wait to share our special day with you. Help
+                      us capture our wedding with Joy.
+                    </p>
+                  </div>
+                </animated.div>
+              ))}
+            </>
+          )}
         </div>
         <div className={styles.information}>
           <div className={styles.rsvp}>
