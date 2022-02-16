@@ -9,7 +9,7 @@ function Home() {
 
   useEffect(() => {
     void setInterval(() => set((state) => (state + 1) % 2), 5000);
-    const mql = window.matchMedia("(max-width: 950px)");
+    const mql = window.matchMedia("screen and (max-width: 950px)");
     mql.onchange = (e) => {
       console.log("hello");
       setMatches(e.matches);
