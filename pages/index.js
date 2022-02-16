@@ -46,31 +46,26 @@ function Home() {
               }}
             >
               <div className={styles.names}>
-                <h3>Allyson Freeman and Jared McCarver</h3>
+                <h3>Jared &</h3>
+                <h3>Allyson</h3>
+                <p>
+                  We can't wait to share our special day with you. Help us
+                  capture our wedding with Joy.
+                </p>
               </div>
             </animated.div>
           ))}
         </div>
         <div className={styles.information}>
           <div className={styles.rsvp}>
-            <h2>durham, north carolina</h2>
+            <h2>durham,</h2>
+            <h2>north carolina</h2>
             <h3>Saturday, October 1, 2022</h3>
             <h3>227 Days 6 Hrs 9 Mins</h3>
             <button>rsvp</button>
             <p>View Details</p>
           </div>
-          <div className={styles.rsvp}>
-            <h2>durham, north carolina</h2>
-            <h3>Saturday, October 1, 2022</h3>
-            <h3>227 Days 6 Hrs 9 Mins</h3>
-            <button>rsvp</button>
-          </div>
-          <div className={styles.rsvp}>
-            <h2>durham, north carolina</h2>
-            <h3>Saturday, October 1, 2022</h3>
-            <h3>227 Days 6 Hrs 9 Mins</h3>
-            <button>rsvp</button>
-          </div>
+          <div className={styles.border}></div>
         </div>
       </div>
     </div>

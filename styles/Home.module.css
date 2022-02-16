@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap");
 .container {
   height: 100vh;
   max-height: 100vh;
@@ -16,6 +16,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
+  gap: 0px;
 }
 .Wrapper > div {
   height: 100%;
@@ -25,6 +26,8 @@
   width: 60vw;
   top: 0;
   left: 0;
+  margin: 0px;
+  padding: 0px;
   position: absolute;
   background-size: cover;
   background-color: transparent;
@@ -49,25 +52,61 @@
   justify-content: flex-end;
   height: 70vh;
   color: #b7a079;
+  width: 100%;
+  margin-bottom: 5rem;
 }
 .rsvp h2 {
   font-family: "Allura", cursive;
   font-weight: 600;
   font-size: 3rem;
 }
+.rsvp h2:last-of-type {
+  padding-bottom: 0.5rem;
+}
 .rsvp h3 {
   font-family: proxima-nova, Helvetica Neue, sans-serif;
   font-size: 1.2rem;
+  padding: 0.5rem 0rem;
 }
 .rsvp button {
+  margin: 3rem 0rem;
   background-color: #faf8f5;
   border: 2px solid #b7a079;
   border-radius: 5px;
-  width: 200px;
-  height: 40px;
+  width: 240px;
+  height: 50px;
 }
 .names {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Allura", cursive;
   color: white;
-  font-size: 3rem;
-  max-width: 500px;
+  font-size: 4rem;
+  max-width: 900px;
+  padding-left: 1rem;
+  bottom: 9rem;
+  left: 5rem;
+  text-align: left;
+}
+.names h3,
+.names p {
+  padding: 0px;
+  margin: 0px;
+}
+.names p {
+  font-family: "Roboto Serif", sans-serif;
+  font-size: 1.75rem;
+  line-height: 3rem;
+  font-weight: 400;
+}
+.border {
+  padding: 0px;
+  margin: 0px;
+  background: url("../public/border.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 250px;
+  background-size: cover;
 }
