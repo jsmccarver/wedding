@@ -31,16 +31,9 @@ const useMediaQuery = (width) => {
 
 function Home() {
   const [index, set] = useState(0);
-  const [matches, setMatches] = useState(false);
   const isBreakpoint = useMediaQuery(768);
   useEffect(() => {
     void setInterval(() => set((state) => (state + 1) % 2), 5000);
-    const mql = window.matchMedia("screen and (max-width: 950px)");
-    mql.onchange = (e) => {
-      console.log("hello");
-      setMatches(e.matches);
-      console.log(e.matches);
-    };
   }, []);
   const slides = [
     {
