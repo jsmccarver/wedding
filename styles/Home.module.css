@@ -5,13 +5,7 @@
   max-height: 100vh;
   position: relative;
 }
-.Container:before {
-  content: "";
-  height: 100%;
-  float: left;
-}
 .wrapper {
-  position: absolute;
   width: 100%;
   height: 100%;
   display: grid;
@@ -30,8 +24,6 @@
   padding: 0px;
   position: absolute;
   background-size: cover;
-  background-color: transparent;
-  overflow: hidden;
   will-change: opacity;
 }
 .photo h3 {
@@ -41,7 +33,6 @@
   bottom: 0;
 }
 .information {
-  float: right;
   background-color: #faf8f5;
   overflow: auto;
 }
